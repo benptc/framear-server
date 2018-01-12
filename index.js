@@ -18,12 +18,13 @@ module.exports = function(rootDirectory) {
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: true }));
 
-        // serves the app frontend
-        app.get('/', function(req, res) {
-            res.sendFile(rootDirectory + '/index.html');
+        app.post('/frame', function(req, res) {
+            console.log('received a frame!', req.body);
+            if (req.body.type) { // received a frame able to be transported
+                io.emit('frameReceived', req.body);
+            }
+            res.json({success: true}).end();
         });
-
-        addFrameRoute();
 
         http.listen(port, function() {
             console.log('listening on *:' + port);
@@ -72,22 +73,6 @@ module.exports = function(rootDirectory) {
 
         });
     }
-
-    function addFrameRoute() {
-        console.log('addFrameRoute');
-
-        app.post('/frame', function(req, res) {
-
-            console.log('received a frame!', req.body);
-
-            if (req.body.type) { // received a frame able to be transported
-                io.emit('frameReceived', req.body);
-            }
-
-            res.json({success: true}).end();
-        });
-    }
-
 
     return {
         startHTTPServer: startHTTPServer,
