@@ -1,11 +1,17 @@
-'use strict';
+function startHTTPServer(port) {
+    console.log('startHTTPServer ' + port);
+    addFrameRoute();
+}
 
-/**
- * Adds commas to a number
- * @param {number} number
- * @param {string} locale
- * @return {string}
- */
-module.exports = function(number, locale) {
-    return number.toLocaleString(locale);
+function createSocketListeners() {
+    console.log('createSocketListeners');
+}
+
+function addFrameRoute() {
+    console.log('addFrameRoute');
+}
+
+module.exports = {
+    startHTTPServer: startHTTPServer,
+    createSocketListeners: createSocketListeners
 };
