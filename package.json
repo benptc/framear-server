@@ -1,6 +1,6 @@
 {
   "name": "framear-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Library for initializing server for Reality Editor hardware interfaces supporting screen<->AR frame transferring",
   "main": "index.js",
   "scripts": {
