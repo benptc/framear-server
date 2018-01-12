@@ -1,0 +1,11 @@
+{
+  "name": "framear-server",
+  "version": "0.1.0",
+  "description": "Library for initializing server for Reality Editor hardware interfaces supporting screen<->AR frame transferring",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Reynolds <breynolds@ptc.com> (http://www.realityeditor.org)",
+  "license": "ISC"
+}
